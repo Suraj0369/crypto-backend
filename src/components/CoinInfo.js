@@ -17,7 +17,7 @@ const CoinInfo = ({ coin }) => {
 	const [historicData, setHistoricData] = useState();
 	const [days, setDays] = useState(1);
 	const { currency } = CryptoState();
-	const [flag, setflag] = useState(false);
+	const [loaderVisible, setLoaderVisible] = useState(true);
 
 	const useStyles = makeStyles((theme) => ({
 		container: {
@@ -43,16 +43,18 @@ const CoinInfo = ({ coin }) => {
 		const { data } = await axios.get(
 			HistoricalChart(coin.id, days, currency)
 		);
-		setflag(true);
+		console.log(data)
 		setHistoricData(data.prices);
+		setLoaderVisible(false);
 	};
 
 	console.log(coin);
 
 	useEffect(() => {
-		fetchHistoricData();
+		if (loaderVisible === true)
+			fetchHistoricData();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [days]);
+	}, [days, loaderVisible]);
 
 	const darkTheme = createTheme({
 		palette: {
@@ -66,7 +68,7 @@ const CoinInfo = ({ coin }) => {
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<div className={classes.container}>
-				{!historicData | (flag === false) ? (
+				{!historicData || loaderVisible ? (
 					<CircularProgress
 						style={{ color: "gold" }}
 						size={250}
@@ -80,9 +82,8 @@ const CoinInfo = ({ coin }) => {
 									let date = new Date(coin[0]);
 									let time =
 										date.getHours() > 12
-											? `${
-													date.getHours() - 12
-											  }:${date.getMinutes()} PM`
+											? `${date.getHours() - 12
+											}:${date.getMinutes()} PM`
 											: `${date.getHours()}:${date.getMinutes()} AM`;
 									return days === 1
 										? time
@@ -118,8 +119,8 @@ const CoinInfo = ({ coin }) => {
 								<SelectButton
 									key={day.value}
 									onClick={() => {
+										setLoaderVisible(true);
 										setDays(day.value);
-										setflag(false);
 									}}
 									selected={day.value === days}>
 									{day.label}
