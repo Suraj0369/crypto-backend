@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HistoricalChart } from "../config/api";
-import { Chart } from "chart.js/auto";
+import { Chart } from "chart.js/auto"; // eslint-disable-line no-unused-vars
 import { Line } from "react-chartjs-2";
 import {
 	CircularProgress,
