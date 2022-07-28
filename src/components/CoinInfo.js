@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HistoricalChart } from "../config/api";
-import { Chart } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import {
 	CircularProgress,
@@ -15,6 +14,7 @@ import { CryptoState } from "../CryptoContext";
 
 const CoinInfo = ({ coin }) => {
 	const [historicData, setHistoricData] = useState();
+	// initialising days as 1
 	const [days, setDays] = useState(1);
 	const { currency } = CryptoState();
 	const [loaderVisible, setLoaderVisible] = useState(true);
