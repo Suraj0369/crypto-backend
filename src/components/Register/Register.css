@@ -1,0 +1,58 @@
+.register-page {
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../Images/BitCoin.jpg');
+    overflow: hidden;
+}
+
+.register-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.register-form {
+    margin-top:150px;
+    width: 440px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+    background-color: rgba(95, 106, 106, 0.5);
+    color: #ffff;
+    height: 30px;
+    width: 178px;
+    padding-left: 13px;
+    border-radius: 7px;
+    font-weight: bolder;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.register-form button {
+    background-color: #B3BE2C;
+    border: none;
+    color: #ffff;
+    height: 27px;
+    width: 90px;
+    margin-left: 47px;
+    border-radius: 7px;
+}
+
+.register-form a {
+    color:rgb(37, 37, 179);
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+.register-form h4 {
+    margin-bottom: 10px;
+}

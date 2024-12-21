@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
 import Homepage from "./pages/Homepage";
 import CoinPage from "./pages/CoinPage";
+import Page from './components/LandingPage/Page.js';
+import Login from './components/Login/Login.js';
+import Register from './components/Register/Register.js';
+import Forum from './components/Forum/Forum.js'
 import { makeStyles } from "@material-ui/core";
 
 function App() {
-
-  // Make styles is the hook from Material UI.
-  // We use a function to give us the styles and then use it again to directly return an object
-
+  
   const useStyles = makeStyles( () => (
     {
       App: {
@@ -24,10 +24,14 @@ function App() {
   
 	return (
 		<div className={classes.App}>
-			<Header></Header>
+			
 			<Routes>
-				<Route path="/" element={<Homepage />} exact/>
-				<Route path="/coins/:id" element={<CoinPage/>} />
+      <Route path="/" element={<Page />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+				  <Route path="/coins" element={<Homepage />} exact/>
+				  <Route path="/coins/:id" element={<CoinPage/>} />
+          <Route path="/forum" element={<Forum />} />
 			</Routes>
 		</div>
 	);

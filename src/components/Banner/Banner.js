@@ -42,7 +42,7 @@ const Banner = () => {
 							marginBottom: 15,
 							fontFamily: "Montserrat",
 						}}>
-						CryptoVerse
+						CryptoVision
 					</Typography>
 					<Typography
 						variant="subtitle2"

@@ -1,0 +1,58 @@
+.login-page {
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../Images/BitCoin.jpg');
+    overflow: hidden;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.login-form {
+    margin-top: 150px;
+    width: 460px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+    background-color: rgba(95, 106, 106, 0.5);
+    color:#ffff;
+    height: 30px;
+    width:170px;
+    padding-left: 13px;
+    border-radius: 7px;
+    font-weight: bolder;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+.login-form button{
+    background-color: #B3BE2C;
+    border:none;
+    color:#ffff;
+    height: 27px;
+    width:90px;
+    margin-left:40px;
+    border-radius: 7px;
+}
+
+.login-form a{
+    color:rgb(37, 37, 179);
+    text-decoration: none;
+    margin-left: 37px;
+}
+
+.login-form h4{
+    margin-bottom: 10px;
+}

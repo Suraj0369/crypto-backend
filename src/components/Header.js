@@ -50,9 +50,9 @@ const Header = () => {
 							onClick={() => history.push("/")}
 							className={classes.title}
 							variant="h6">
-							CryptoVerse
+							CryptoVision
 						</Typography>
-
+						
 						<Select
 							variant="outlined"
 							style={{
@@ -67,9 +67,12 @@ const Header = () => {
 							<MenuItem value={"USD"}>USD</MenuItem>
 							<MenuItem value={"INR"}>INR</MenuItem>
 						</Select>
+						<a href="/forum" style={{ marginLeft : '10px'}}><b>Community</b></a>
+						<a href= "/" style={{ marginLeft : '10px'}}><b>Signout</b></a>
 					</Toolbar>
 				</Container>
 			</AppBar>
+
 		</ThemeProvider>
 	);
 };
